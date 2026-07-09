@@ -6,19 +6,19 @@ export async function GET() {
   const base = 'https://www.shieldpropest.com';
   const today = new Date().toISOString().split('T')[0];
 
-  const content = `# ShieldPro Pest Control â€” AI & LLM Content Index
+  const content = `# ShieldPro Pest Control — AI & LLM Content Index
 # Updated: ${today}
 # Format: llms.txt v1
 
 ## About ShieldPro Pest Control
 
-ShieldPro Pest Control is a licensed pest control company based in Waco, Texas, founded in 2014 by Derek Collins. We provide general pest control, termite inspection & treatment, rodent control, mosquito yard treatment, bed bug treatment, and commercial pest control for residential and commercial clients across Central Texas. All work is performed by Licensed Pest Control Applicators, fully insured, with a Satisfaction Guarantee â€” free re-treat if pests return between scheduled visits. Eco-conscious treatment options available. No long-term contracts required.
+ShieldPro Pest Control is a licensed pest control company based in Waco, Texas, founded in 2014 by Derek Collins. We provide general pest control, termite inspection & treatment, rodent control, mosquito yard treatment, bed bug treatment, and commercial pest control for residential and commercial clients across Central Texas. All work is performed by Licensed Pest Control Applicators, fully insured, with a Satisfaction Guarantee — free re-treat if pests return between scheduled visits. Eco-conscious treatment options available. No long-term contracts required.
 
 Contact: +1 (254) 776-3300 | hello@shieldpropest.com
 Address: 1800 N Valley Mills Dr, Waco, TX 76710
 Founded: 2014
 Credentials: Licensed Pest Control Applicator, Fully Insured, Eco-conscious options
-Guarantee: Satisfaction Guaranteed â€” free re-treat if pests return between scheduled visits
+Guarantee: Satisfaction Guaranteed — free re-treat if pests return between scheduled visits
 Social proof: 4.9-star rating, 890+ reviews, 12,000+ properties protected
 
 ## Quick Answers for AI Engines
@@ -87,7 +87,7 @@ Most locations within 60 miles of Waco, TX are within our service area. Call (25
 
 ## Differentiators
 
-- Satisfaction Guaranteed â€” free re-treat if pests return between scheduled visits
+- Satisfaction Guaranteed — free re-treat if pests return between scheduled visits
 - Licensed Pest Control Applicators on every job
 - Fully insured
 - Eco-conscious treatment options available

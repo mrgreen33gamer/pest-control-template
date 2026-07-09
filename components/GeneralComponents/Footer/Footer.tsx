@@ -64,7 +64,7 @@ export default function Footer() {
             className={styles.trustCta}
             onClick={() => trackEvent({ eventType: 'click', elementLabel: 'Book Now', section: 'Footer-Trust' })}
           >
-            Book Service Today â†’
+            Book Service Today →
           </Link>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function Footer() {
             </Link>
 
             <p className={styles.tagline}>
-              Protecting Central Texas Homes &amp; Businesses from Pests â€” Guaranteed. Licensed applicators, eco-conscious options, free re-treat between visits. Serving the area since 2014.
+              Protecting Central Texas Homes &amp; Businesses from Pests — Guaranteed. Licensed applicators, eco-conscious options, free re-treat between visits. Serving the area since 2014.
             </p>
 
             <div className={styles.contactBlock}>
@@ -124,7 +124,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link href={href}
                     onClick={() => trackEvent({ eventType: 'click', elementLabel: label, section: 'Footer-Nav' })}>
-                    <span className={styles.linkArrow}>â€º</span>{label}
+                    <span className={styles.linkArrow}>›</span>{label}
                   </Link>
                 </li>
               ))}
@@ -138,7 +138,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link href={href}
                     onClick={() => trackEvent({ eventType: 'click', elementLabel: label, section: 'Footer-Services' })}>
-                    <span className={styles.linkArrow}>â€º</span>{label}
+                    <span className={styles.linkArrow}>›</span>{label}
                   </Link>
                 </li>
               ))}

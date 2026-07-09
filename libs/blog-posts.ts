@@ -19,7 +19,7 @@ const ALL_POSTS: BlogPost[] = [
     category: 'Prevention',
     date:     'July 3, 2026',
     readTime: 7,
-    imageSrc: '/pages/blogs/heat-pump.jpg',
+    imageSrc: '/pages/home/services/service-1.jpg',
     imageAlt: 'Termite prevention tips for Central Texas homes',
     featured: true,
   },
@@ -30,7 +30,7 @@ const ALL_POSTS: BlogPost[] = [
     category: 'Plans',
     date:     'June 24, 2026',
     readTime: 6,
-    imageSrc: '/pages/blogs/hvac-filter.jpg',
+    imageSrc: '/pages/home/services/service-2.jpg',
     imageAlt: 'How often to schedule pest control in Waco TX',
   },
   {
@@ -40,7 +40,7 @@ const ALL_POSTS: BlogPost[] = [
     category: 'Rodents',
     date:     'June 15, 2026',
     readTime: 8,
-    imageSrc: '/pages/blogs/ac-replacement.jpg',
+    imageSrc: '/pages/home/welcome/hero-main.jpg',
     imageAlt: 'Signs of a rodent problem in Waco TX homes',
   },
 ];

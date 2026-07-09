@@ -1,7 +1,7 @@
 // src/app/layout.tsx
-// ShieldPro Pest Control â€” root layout
+// ShieldPro Pest Control — root layout
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, ABeeZee } from "next/font/google";
+import { Teko, Exo_2, Roboto } from "next/font/google";
 import "./globals.css";
 import "./globalVariables.scss";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -25,18 +25,25 @@ import reviews from "../../libs/local-db/reviews";
 
 config.autoAddCss = false;
 
-const barlowCondensed = Barlow_Condensed({
-  weight: ["400", "500", "600", "700", "800"],
+const fontTitle = Teko({
+  weight: ["400","500","600","700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-barlow-condensed",
+  variable: "--font-title",
 });
 
-const aBeeZee = ABeeZee({
-  weight: ["400"],
+const fontHeader = Exo_2({
+  weight: ["400","500","600","700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-abeezee",
+  variable: "--font-header",
+});
+
+const fontBody = Roboto({
+  weight: ["400","500","700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
 });
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -49,8 +56,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit:  "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0d1b2a" },
-    { media: "(prefers-color-scheme: dark)",  color: "#0d1b2a" },
+    { media: "(prefers-color-scheme: light)", color: "#1a1a0a" },
+    { media: "(prefers-color-scheme: dark)",  color: "#1a1a0a" },
   ],
   colorScheme: "dark",
 };
@@ -58,7 +65,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "ShieldPro Pest Control | Exterminating, Termites & Rodents â€” Waco, TX",
+    default: "ShieldPro Pest Control | Exterminating, Termites & Rodents — Waco, TX",
     template: "%s | ShieldPro Pest Control",
   },
   description:
@@ -83,7 +90,7 @@ export const metadata: Metadata = {
     shortcut: [`${BASE_URL}/logos/apple-touch-icon.png?v=1`],
   },
   openGraph: {
-    title: "ShieldPro Pest Control | Exterminating, Termites & Rodents â€” Waco, TX",
+    title: "ShieldPro Pest Control | Exterminating, Termites & Rodents — Waco, TX",
     description:
       "Waco-based pest control for homes and businesses across Central Texas. Licensed applicators, eco-conscious options, free re-treat between visits. Satisfaction guaranteed.",
     url: BASE_URL,
@@ -93,7 +100,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/logos/scott-apps-banner.png?v=1`,
         width: 1200,
         height: 630,
-        alt: "ShieldPro Pest Control â€” Waco TX Pest Control & Exterminating",
+        alt: "ShieldPro Pest Control — Waco TX Pest Control & Exterminating",
       },
     ],
     locale: "en_US",
@@ -103,7 +110,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ShieldPro Pest Control | Waco TX Exterminator",
     description:
-      "General pest, termites, rodents, mosquitoes, bed bugs & commercial pest control. Licensed, insured â€” free re-treat guarantee.",
+      "General pest, termites, rodents, mosquitoes, bed bugs & commercial pest control. Licensed, insured — free re-treat guarantee.",
     images: [`${BASE_URL}/logos/scott-apps-banner.png?v=1`],
   },
   robots: {
@@ -133,7 +140,7 @@ const localBusinessSchema = {
   name: "ShieldPro Pest Control",
   alternateName: "ShieldPro Pest Control Waco",
   description:
-    "Residential and commercial pest control in Waco and Central Texas â€” general pest control, termite inspection & treatment, rodent control, mosquito yard treatment, bed bug treatment, and commercial pest programs. Licensed Pest Control Applicators, fully insured, satisfaction guaranteed with free re-treat between scheduled visits.",
+    "Residential and commercial pest control in Waco and Central Texas — general pest control, termite inspection & treatment, rodent control, mosquito yard treatment, bed bug treatment, and commercial pest programs. Licensed Pest Control Applicators, fully insured, satisfaction guaranteed with free re-treat between scheduled visits.",
   url: BASE_URL,
   telephone: "+12547763300",
   email: "hello@shieldpropest.com",
@@ -216,7 +223,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barlowCondensed.variable} ${aBeeZee.variable}`}
+      className={`${fontTitle.variable} ${fontHeader.variable} ${fontBody.variable}`}
     >
       <head>
         <script
@@ -229,7 +236,7 @@ export default function RootLayout({
           <Header />
         </ConditionalShell>
 
-        <NextTopLoader color="#ca8a04" showSpinner={false} />
+        <NextTopLoader color="#84cc16" showSpinner={false} />
 
         <Suspense fallback={null}>
           <Analytics />
@@ -245,10 +252,10 @@ export default function RootLayout({
                   alignItems: "center",
                   width: "100%",
                   height: "100vh",
-                  background: "#0d1b2a",
+                  background: "#1a1a0a",
                 }}
               >
-                <PulseLoader size={50} color="#ca8a04" />
+                <PulseLoader size={50} color="#84cc16" />
               </div>
             }
           >

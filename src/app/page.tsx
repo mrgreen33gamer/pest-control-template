@@ -35,36 +35,42 @@ export default function HomePage() {
       title: "General Pest Control",
       body: "Ants, roaches, spiders, silverfish, and seasonal invaders. One-time treatments or recurring plans with free re-treats between visits.",
       link: "/services/general-pest-control",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faHouseChimneyCrack,
       title: "Termite Inspection & Treatment",
       body: "Thorough inspections, liquid and bait systems, and ongoing monitoring to protect the structure of your Central Texas home.",
       link: "/services/termite-inspection-treatment",
+      image: "/pages/home/services/service-2.jpg",
     },
     {
       icon: faPaw,
       title: "Rodent Control",
       body: "Mice and rats removed with exclusion, trapping, and sanitation guidance so they cannot come back through the same gaps.",
       link: "/services/rodent-control",
+      image: "/pages/home/services/service-3.jpg",
     },
     {
       icon: faMosquito,
       title: "Mosquito Yard Treatment",
       body: "Barrier treatments and breeding-site focus so your yard is usable again through Texas mosquito season.",
       link: "/services/mosquito-yard-treatment",
+      image: "/pages/home/services/service-4.jpg",
     },
     {
       icon: faBed,
       title: "Bed Bug Treatment",
       body: "Discreet inspection and proven treatment protocols with clear prep instructions and follow-up verification.",
       link: "/services/bed-bug-treatment",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faBuilding,
       title: "Commercial Pest Control",
       body: "Restaurants, multi-unit, offices, and facilities — scheduled service, documentation, and emergency response.",
       link: "/services/commercial-pest-control",
+      image: "/pages/home/services/service-2.jpg",
     },
   ];
 
@@ -191,28 +197,16 @@ export default function HomePage() {
 
   return (
     <main className={styles.pageWrapper}>
-
       <WelcomePage />
-
       <TrustBar
         headline="Waco's trusted pest control team — licensed, insured, and guaranteed on every plan"
       />
-
-      <div className={styles.section}>
-        <ImpactMetrics
-          title="Numbers That Speak for Us"
-          metrics={metrics}
-          cityName="Waco"
-        />
-      </div>
-
       <div className={styles.section}>
         <ServiceCardComponent
           heading="Complete Pest Protection for Your Home & Business"
           cards={services}
         />
       </div>
-
       <div className={styles.section}>
         <WhyChooseUs
           cityName="Waco"
@@ -220,7 +214,55 @@ export default function HomePage() {
           title="What Makes ShieldPro Different"
         />
       </div>
-
+      <CTABanner
+        headline="Pests Out. Comfort Back."
+        subline="One-time treatments and quarterly plans for roaches, ants, spiders, and more — family- and pet-aware applications."
+        primaryText="Call (254) 776-3300"
+        primaryLink="tel:+12547763300"
+        secondaryText="Start a Plan"
+        secondaryLink="/contact"
+        imageSrc="/pages/home/welcome/hero-main.jpg"
+      />
+      <div className={styles.section}>
+        <ImpactMetrics
+          title="Numbers That Speak for Us"
+          metrics={metrics}
+          cityName="Waco"
+        />
+      </div>
+      <div className={styles.section}>
+        <ProcessTimeline steps={processSteps} />
+      </div>
+      <div className={styles.section}>
+        <Testimonials testimonials={reviews} />
+      </div>
+      <div className={styles.section}>
+        <GuaranteeSection />
+      </div>
+      <div className={styles.section}>
+        <LocalServiceAreas
+          cityName="Waco"
+          areas={localAreas}
+          servicePath=""
+          title="Serving All of Central Texas"
+        />
+      </div>
+      <div className={styles.section}>
+        <WhatToExpect
+          sectionTitle="Every Service Call, Every Time"
+          expectations={expectations}
+        />
+      </div>
+      <div className={styles.section}>
+        <FAQ
+          cityName="Waco"
+          faq={faq}
+          title="Pest Control Questions — Answered Straight"
+        />
+      </div>
+      <div className={styles.section}>
+        <BlogPreviewGrid />
+      </div>
       <div className={styles.section}>
         <Variant4
           title="Request Service or a Free Quote"
@@ -230,56 +272,6 @@ export default function HomePage() {
           formVariant={2}
         />
       </div>
-
-      <div className={styles.section}>
-        <ProcessTimeline steps={processSteps} />
-      </div>
-
-      <div className={styles.section}>
-        <Testimonials testimonials={reviews} />
-      </div>
-
-      <div className={styles.section}>
-        <GuaranteeSection />
-      </div>
-
-      <CTABanner
-        headline="Pests Won't Wait. Neither Should You."
-        subline="Same-day appointments across Waco, Hewitt, Woodway, Temple, and all of Central Texas. Free re-treats between visits. Licensed & insured."
-        primaryText="Call (254) 776-3300"
-        primaryLink="tel:+12547763300"
-        secondaryText="Book Online"
-        secondaryLink="/contact"
-      />
-
-      <div className={styles.section}>
-        <LocalServiceAreas
-          cityName="Waco"
-          areas={localAreas}
-          servicePath=""
-          title="Serving All of Central Texas"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <WhatToExpect
-          sectionTitle="Every Service Call, Every Time"
-          expectations={expectations}
-        />
-      </div>
-
-      <div className={styles.section}>
-        <FAQ
-          cityName="Waco"
-          faq={faq}
-          title="Pest Control Questions — Answered Straight"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <BlogPreviewGrid />
-      </div>
-
     </main>
   );
 }
