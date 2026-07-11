@@ -63,14 +63,14 @@ export default function HomePage() {
       title: "Bed Bug Treatment",
       body: "Discreet inspection and proven treatment protocols with clear prep instructions and follow-up verification.",
       link: "/services/bed-bug-treatment",
-      image: "/pages/home/services/service-1.jpg",
+      image: "/pages/home/welcome/before.jpg",
     },
     {
       icon: faBuilding,
       title: "Commercial Pest Control",
       body: "Restaurants, multi-unit, offices, and facilities — scheduled service, documentation, and emergency response.",
       link: "/services/commercial-pest-control",
-      image: "/pages/home/services/service-2.jpg",
+      image: "/pages/home/welcome/after.jpg",
     },
   ];
 

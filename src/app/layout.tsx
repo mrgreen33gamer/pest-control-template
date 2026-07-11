@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     siteName: "ShieldPro Pest Control",
     images: [
       {
-        url: `${BASE_URL}/logos/scott-apps-banner.png?v=1`,
+        url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`,
         width: 1200,
         height: 630,
         alt: "ShieldPro Pest Control — Waco TX Pest Control & Exterminating",
@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     title: "ShieldPro Pest Control | Waco TX Exterminator",
     description:
       "General pest, termites, rodents, mosquitoes, bed bugs & commercial pest control. Licensed, insured — free re-treat guarantee.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=1`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
   robots: {
     index: true,
