@@ -1,112 +1,64 @@
-// _archetype-library/hero-i-editorial/Component.tsx
-//
-// Hero I: Minimal Editorial — oversized typography, single accent shape,
-// large negative space. Optional accentWord as huge watermark typography.
-// No canvas, no stat cards, no widget.
+// Pest Control Hero — ShieldPro
+// Photographic parallax stage + an authentic technician photo card replaces the
+// editorial watermark/accent-shape art. Real imagery, lime brand detailing.
+// Photos live in /public/pages/home/welcome (sourced for this hero) and are
+// wired in below. All copy (headline, subheadline, CTAs, badge, chips) is kept.
 'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { PhoneIcon, ChevronIcon, CheckIcon } from './_shared/icons';
 import styles from './styles.module.scss';
 
 export default function WelcomePage() {
-const badgeText = 'Waco\'s Most Trusted Pest Control — Since 2014';
-const headlineLines = [
-  'Pests Out.',
-  'Home Safe.',
-];
-const headlineAccent = 'ShieldPro.';
-const subheadline = 'Protecting Central Texas Homes & Businesses from Pests — Guaranteed. Licensed applicators, eco-conscious options, free re-treat between visits.';
-const primaryCta = { label: 'Call (254) 776-3300', href: 'tel:+12547763300' };
-const secondaryCta = { label: 'Free Estimate', href: '/contact' };
-const chips = [
-  'Same-Day Service',
-  'Free Re-Treats',
-  'Licensed',
-  'Since 2014',
-  'Eco Options',
-];
-const stats = [
-  {
-    "value": "12,000+",
-    "label": "Properties Protected"
-  },
-  {
-    "value": "4.9 ★",
-    "label": "Google Rating"
-  },
-  {
-    "value": "Free",
-    "label": "Re-Treat Guarantee"
-  },
-  {
-    "value": "Same-Day",
-    "label": "Service Available"
-  }
-];
-const meterTarget = 72;
-const meterTopLabel = "Peak";
-const meterMidLabel = "Local";
-const meterBotLabel = "Base";
-const particleColor = '#84cc16';
-const beforeImageSrc = '/pages/home/welcome/before.jpg';
-const afterImageSrc = '/pages/home/welcome/after.jpg';
-const beforeLabel = "Infestation";
-const afterLabel = "Under control";
-const mapCenterLabel = 'Service HQ';
-const mapPins = [
-  { label: 'Waco', x: 42, y: 48 },
-  { label: 'Temple', x: 68, y: 62 },
-  { label: 'Killeen', x: 58, y: 72 },
-];
-const coverageLabel = 'Central Texas coverage';
-const materials = [
-  { name: "General", swatch: "#84cc16", imageSrc: "/pages/home/welcome/mat-1.jpg" },
-  { name: "Roach", swatch: "#a3e635", imageSrc: "/pages/home/welcome/mat-2.jpg" },
-  { name: "Ant", swatch: "#65a30d", imageSrc: "/pages/home/welcome/mat-3.jpg" },
-  { name: "Spider", swatch: "#4d7c0f", imageSrc: "/pages/home/welcome/mat-1.jpg" },
-  { name: "Exterior", swatch: "#365314", imageSrc: "/pages/home/welcome/mat-2.jpg" },
-  { name: "Commercial", swatch: "#1a2e05", imageSrc: "/pages/home/welcome/mat-3.jpg" }
-];
-const quote = "Quarterly plan ended our kitchen ant highway. Tech is consistent and explains products clearly.";
-const authorName = "Renee Q.";
-const authorMeta = "Pest plan · Waco";
-const rating = 5;
-const schematicLabel = "ShieldPro schematic";
-const gauges = [
-  { label: "Homes", value: "4,700+" },
-  { label: "Rating", value: "4.8 ★" },
-  { label: "Plans", value: "Flexible" },
-  { label: "Re-treat", value: "Included*" }
-];
-const toggles = [
-  { label: "Plans active", on: true },
-  { label: "Recurring routes", on: true },
-  { label: "Re-treat ready", on: true }
-];
-const textureSrc = '/pages/home/welcome/hero-main.jpg';
-const textureAlt = 'Texture';
-const accentWord = "ShieldPro";
+  const reduceMotion = useReducedMotion();
+  const heroRef = useRef<HTMLElement>(null);
+
+  // Scroll-linked parallax on the background photo. Disabled under reduced-motion.
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', reduceMotion ? '0%' : '16%']);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.08, reduceMotion ? 1.08 : 1.16]);
+
+  const badgeText = 'Waco\'s Most Trusted Pest Control — Since 2014';
+  const headlineLines = [
+    'Pests Out.',
+    'Home Safe.',
+  ];
+  const headlineAccent = 'ShieldPro.';
+  const subheadline = 'Protecting Central Texas Homes & Businesses from Pests — Guaranteed. Licensed applicators, eco-conscious options, free re-treat between visits.';
+  const primaryCta = { label: 'Call (254) 776-3300', href: 'tel:+12547763300' };
+  const secondaryCta = { label: 'Free Estimate', href: '/contact' };
+  const chips = [
+    'Same-Day Service',
+    'Free Re-Treats',
+    'Licensed',
+    'Since 2014',
+    'Eco Options',
+  ];
 
   return (
-    <section className={styles.hero} aria-label="Hero">
-      {/* Single geometric accent — not a content widget */}
-      <div className={styles.accentShape} aria-hidden="true" />
-      <div className={styles.hairline} aria-hidden="true" />
-
-      {accentWord ? (
-        <div className={styles.watermarkSlot} aria-hidden="true">
-          <motion.span
-            className={styles.watermark}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {accentWord}
-          </motion.span>
-        </div>
-      ) : null}
+    <section ref={heroRef} className={styles.hero} aria-label="Hero">
+      {/* Photographic parallax background — technician treating a residential yard */}
+      <motion.div
+        className={styles.bgLayer}
+        style={{ y: bgY, scale: bgScale }}
+        aria-hidden="true"
+      >
+        <Image
+          src="/pages/home/welcome/hero-yard-treatment.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.bgImage}
+        />
+      </motion.div>
+      {/* Lime-toned scrim keeps the headline legible and on-brand */}
+      <div className={styles.scrim} aria-hidden="true" />
 
       <div className={styles.layout}>
         <div className={styles.content}>
@@ -176,6 +128,40 @@ const accentWord = "ShieldPro";
             ))}
           </motion.div>
         </div>
+
+        {/* Authentic technician photo — the ownable image, framed as a spec card */}
+        <motion.div
+          className={styles.visual}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
+          <div className={styles.photoCard}>
+            <Image
+              src="/pages/home/welcome/technician-treatment.jpg"
+              alt="Pest control technician in protective gear treating a home for pests"
+              fill
+              priority
+              sizes="(max-width: 960px) 88vw, 460px"
+              className={styles.photo}
+            />
+            <div className={styles.photoGlaze} aria-hidden="true" />
+
+            <div className={styles.photoBadge}>
+              <span className={styles.photoBadgeDot} />
+              Licensed Tech · On-Site
+            </div>
+
+            <div className={styles.specCard}>
+              <span className={styles.specRow}>
+                <CheckIcon size={10} /> Free re-treats between visits
+              </span>
+              <span className={styles.specRow}>
+                <CheckIcon size={10} /> Licensed applicators
+              </span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
