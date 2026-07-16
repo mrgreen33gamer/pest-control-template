@@ -74,7 +74,7 @@
   transition: background 0.3s ease-in-out, transform 0.3s;
 
   &:hover {
-background: color.adjust(#b1de00, $lightness: -8%);
+background: color.adjust(#00de6c, $lightness: -8%);
     transform: translateY(-2px);
   }
 }

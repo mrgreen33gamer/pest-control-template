@@ -261,7 +261,7 @@
   transition: background 0.25s ease, transform 0.2s ease;
 
   &:hover:not(:disabled) {
-    background: color.adjust(#b1de00, $lightness: -8%);
+    background: color.adjust(#00de6c, $lightness: -8%);
     transform: translateY(-1px);
   }
   &:disabled { opacity: 0.6; cursor: not-allowed; }

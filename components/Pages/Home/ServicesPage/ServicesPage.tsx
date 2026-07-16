@@ -104,7 +104,7 @@ const ServicesPage: React.FC<SectionProps> = ({ direction, variants, handleDragE
                 y1={startY}
                 x2={endX}
                 y2={endY}
-                stroke="#586426"
+                stroke="#266444"
                 strokeWidth="0.5"
               />
             );

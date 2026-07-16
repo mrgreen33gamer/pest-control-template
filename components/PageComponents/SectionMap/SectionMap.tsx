@@ -93,7 +93,7 @@ export default function SectionMap() {
       hqEl.style.cssText = 'width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;';
       const hqDot = document.createElement('div');
       hqDot.className = 'hqMarker';
-      hqDot.style.cssText = 'width:32px;height:32px;background:#b1de00;border:4px solid #ffffff;border-radius:50%;box-shadow:0 0 0 8px rgba(177,222,0,0.3);';
+      hqDot.style.cssText = 'width:32px;height:32px;background:#00de6c;border:4px solid #ffffff;border-radius:50%;box-shadow:0 0 0 8px rgba(0, 222, 108,0.3);';
       hqEl.appendChild(hqDot);
       new mapboxgl.Marker({ element: hqEl, anchor: 'center' })
         .setLngLat([-97.1315, 31.5548])

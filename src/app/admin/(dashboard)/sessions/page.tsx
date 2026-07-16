@@ -80,7 +80,7 @@ export default function AdminSessionsPage() {
                   borderRadius: 0,
                   border: 'none',
                   borderRight: '1px solid var(--admin-border-2)',
-                  background: r === range ? '#84cc16' : 'transparent',
+                  background: r === range ? '#059669' : 'transparent',
                   color: r === range ? '#fff' : 'var(--admin-text-muted)',
                 }}
               >
